@@ -20,7 +20,7 @@ public class ProgramTests
 
         // Assert
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("True");
+        output.Should().Be("yay");
     }
 
     [Fact]
@@ -36,7 +36,7 @@ public class ProgramTests
 
         // Assert
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("False");
+        output.Should().Be("nay");
     }
 
     [Fact]
@@ -52,7 +52,7 @@ public class ProgramTests
 
         // Assert
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("True");
+        output.Should().Be("yay");
     }
     [Fact]
     public void Main_input_1900_output_False()
@@ -67,6 +67,6 @@ public class ProgramTests
 
         // Assert
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("False");
+        output.Should().Be("nay");
     }
 }

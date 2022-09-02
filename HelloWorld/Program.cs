@@ -5,21 +5,32 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        foreach (string arg in args)
+
+        if (args.Length != 0)
         {
-            if (int.TryParse(arg, out var val))
+            foreach (string arg in args)
+            {
+                if (int.TryParse(arg, out var val))
+                {
+                    Console.WriteLine(leapYear(val));
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Welcome to LeapYear Calculator.EXE");
+            Console.WriteLine("Input year, finish with enter");
+            var input = Console.ReadLine();
+            //var output = writer.GetStringBuilder().ToString().TrimEnd();
+            if (int.TryParse(input, out var val))
             {
                 Console.WriteLine(leapYear(val));
-            }
-            else
-            {
-                Console.WriteLine("Error");
             }
         }
     }
 
 
-    static bool leapYear(int year)
+    static string leapYear(int year)
     {
         if (year % 4 == 0)
         {
@@ -27,13 +38,13 @@ internal class Program
             {
                 if (year % 400 == 0)
                 {
-                    return true;
+                    return "yay";
                 }
-                return false;
+                return "nay";
             }
-            return true;
+            return "yay";
         }
-        return false;
+        return "nay";
     }
 
 }
